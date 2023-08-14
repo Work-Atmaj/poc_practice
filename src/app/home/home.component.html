@@ -1,0 +1,13 @@
+<ng-container *ngIf="isAuthenticated | async; else loginMessage">
+  <ng-container *ngIf="isAdminLogin | async; else homeContent">
+    <p>Admin Login</p>
+  </ng-container>
+</ng-container>
+
+<ng-template #homeContent>
+  <p>User Login!</p>
+</ng-template>
+
+<ng-template #loginMessage>
+  <p>Please Login</p>
+</ng-template>
