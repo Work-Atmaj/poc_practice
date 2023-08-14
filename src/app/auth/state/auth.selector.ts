@@ -10,7 +10,7 @@ export const isAuthenticated = createSelector(getAuthState, (state) => {
 
 export const isUserStatus = (email: string, password: string) =>
   createSelector(
-    getAuthState, // Replace with your actual selector to get authentication state
+    getAuthState, 
     (state) => {
       const user = state.user.find(sUser => sUser.email === email);
 
@@ -26,8 +26,6 @@ export const isUserStatus = (email: string, password: string) =>
 
 
 export const isAdmin = createSelector(getAuthState, (state) => {
-  console.log(state.selected);
-  
   return state.selected ? state.selected.isAdmin:false;
 });
 
