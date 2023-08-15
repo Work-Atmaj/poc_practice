@@ -38,7 +38,7 @@ const _counterReducer = createReducer(
   on(changeChannelName, (state) => {
     return {
       ...state,
-      channelName: 'Modified Leela Web Dev',
+      channelName: 'Modified Name',
     };
   })
 );

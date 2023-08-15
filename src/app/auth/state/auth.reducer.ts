@@ -18,8 +18,6 @@ const _authReducer = createReducer(
     }
   }),
   on(signupStart, (state, action) => {
-    console.log(state,action);
-    
     return {
       ...state,
       user: [...state.user,action.user],

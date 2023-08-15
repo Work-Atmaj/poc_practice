@@ -24,6 +24,18 @@ export const isUserStatus = (email: string, password: string) =>
     }
   );
 
+  export const checkUserExist = (email: string) =>
+  createSelector(
+    getAuthState, 
+    (state) => {
+      const user = state.user.find(sUser => sUser.email === email);
+
+      if (user) {
+        return { status: false, message: 'User Exist' };
+      }
+      return { status: true, message: 'Success' };
+    }
+  );
 
 export const isAdmin = createSelector(getAuthState, (state) => {
   return state.selected ? state.selected.isAdmin:false;

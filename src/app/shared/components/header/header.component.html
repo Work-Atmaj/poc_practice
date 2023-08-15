@@ -34,6 +34,11 @@
             >Signup</a
           >
         </li>
+        <li class="nav-item" *ngIf="(isAuthenticated | async)">
+          <a class="nav-link" href="#" 
+            >LogOut</a
+          >
+        </li>
       </ul>
     </div>
   </div>

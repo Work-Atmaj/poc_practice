@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit,OnDestroy{
     this.store.select(isUserStatus(email, password)).pipe(
       take(1) // Take only one emission
     ).subscribe(result => {
-      console.log(result.status);
-  
       if (result.status) {
         // If the status is successful, then dispatch the login action
         this.store.dispatch(loginStart({ email, password }));
